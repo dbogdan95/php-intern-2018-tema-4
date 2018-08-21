@@ -14,3 +14,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('events',  ['uses' => 'EventsController@index']);
+$router->get('events/{id}', ['uses' => 'EventsController@show']);
+$router->post('events', ['uses' => 'EventsController@store']);
+$router->get('events/delete/{id}', ['uses' => 'EventsController@destroy']);
+$router->post('events/update/{id}', ['uses' => 'EventsController@update']);
